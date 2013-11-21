@@ -16,6 +16,10 @@ DerivedData
 .idea/
 *.hmap
 *.xccheckout
+*.framework
+*~
+obj/
+derived_src
 
 #CocoaPods
 Pods
