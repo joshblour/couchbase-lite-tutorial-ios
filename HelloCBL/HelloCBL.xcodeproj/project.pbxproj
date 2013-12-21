@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E1A8E27A1863E0E700B8E779 /* CouchbaseLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A8E2791863E0E700B8E779 /* CouchbaseLite.framework */; };
 		E1B118651839E33D0083060E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B118641839E33D0083060E /* Foundation.framework */; };
 		E1B118671839E33D0083060E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B118661839E33D0083060E /* CoreGraphics.framework */; };
 		E1B118691839E33D0083060E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B118681839E33D0083060E /* UIKit.framework */; };
@@ -19,7 +20,6 @@
 		E1B118801839E33D0083060E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B118681839E33D0083060E /* UIKit.framework */; };
 		E1B118881839E33D0083060E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1B118861839E33D0083060E /* InfoPlist.strings */; };
 		E1B1188A1839E33D0083060E /* HelloCBLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B118891839E33D0083060E /* HelloCBLTests.m */; };
-		E1B118941839E67C0083060E /* CouchbaseLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B118931839E67C0083060E /* CouchbaseLite.framework */; };
 		E1B11896183AD1690083060E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B11895183AD1690083060E /* CFNetwork.framework */; };
 		E1B11898183AD1740083060E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B11897183AD1740083060E /* Security.framework */; };
 		E1B1189A183AD1910083060E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B11899183AD1910083060E /* SystemConfiguration.framework */; };
@@ -38,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E1A8E2791863E0E700B8E779 /* CouchbaseLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CouchbaseLite.framework; sourceTree = "<group>"; };
 		E1B118611839E33D0083060E /* HelloCBL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloCBL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B118641839E33D0083060E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E1B118661839E33D0083060E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -54,7 +55,6 @@
 		E1B118851839E33D0083060E /* HelloCBLTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HelloCBLTests-Info.plist"; sourceTree = "<group>"; };
 		E1B118871839E33D0083060E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E1B118891839E33D0083060E /* HelloCBLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloCBLTests.m; sourceTree = "<group>"; };
-		E1B118931839E67C0083060E /* CouchbaseLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CouchbaseLite.framework; sourceTree = "<group>"; };
 		E1B11895183AD1690083060E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		E1B11897183AD1740083060E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		E1B11899183AD1910083060E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -71,10 +71,10 @@
 				E1B1189C183AD1A00083060E /* libsqlite3.dylib in Frameworks */,
 				E1B1189A183AD1910083060E /* SystemConfiguration.framework in Frameworks */,
 				E1B11898183AD1740083060E /* Security.framework in Frameworks */,
+				E1A8E27A1863E0E700B8E779 /* CouchbaseLite.framework in Frameworks */,
 				E1B11896183AD1690083060E /* CFNetwork.framework in Frameworks */,
 				E1B118671839E33D0083060E /* CoreGraphics.framework in Frameworks */,
 				E1B118691839E33D0083060E /* UIKit.framework in Frameworks */,
-				E1B118941839E67C0083060E /* CouchbaseLite.framework in Frameworks */,
 				E1B118651839E33D0083060E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,12 +114,12 @@
 		E1B118631839E33D0083060E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E1A8E2791863E0E700B8E779 /* CouchbaseLite.framework */,
 				E1B1189D183AD1AB0083060E /* libz.dylib */,
 				E1B1189B183AD1A00083060E /* libsqlite3.dylib */,
 				E1B11899183AD1910083060E /* SystemConfiguration.framework */,
 				E1B11897183AD1740083060E /* Security.framework */,
 				E1B11895183AD1690083060E /* CFNetwork.framework */,
-				E1B118931839E67C0083060E /* CouchbaseLite.framework */,
 				E1B118641839E33D0083060E /* Foundation.framework */,
 				E1B118661839E33D0083060E /* CoreGraphics.framework */,
 				E1B118681839E33D0083060E /* UIKit.framework */,
@@ -476,6 +476,7 @@
 				E1B1188F1839E33D0083060E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1B118901839E33D0083060E /* Build configuration list for PBXNativeTarget "HelloCBLTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +485,7 @@
 				E1B118921839E33D0083060E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
