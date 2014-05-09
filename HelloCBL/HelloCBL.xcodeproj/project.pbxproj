@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E1A8E27A1863E0E700B8E779 /* CouchbaseLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A8E2791863E0E700B8E779 /* CouchbaseLite.framework */; };
+		E11F318519121F2D00C28CA9 /* CouchbaseLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11F318419121F2D00C28CA9 /* CouchbaseLite.framework */; };
 		E1B118651839E33D0083060E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B118641839E33D0083060E /* Foundation.framework */; };
 		E1B118671839E33D0083060E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B118661839E33D0083060E /* CoreGraphics.framework */; };
 		E1B118691839E33D0083060E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B118681839E33D0083060E /* UIKit.framework */; };
@@ -38,7 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E1A8E2791863E0E700B8E779 /* CouchbaseLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CouchbaseLite.framework; sourceTree = "<group>"; };
+		E11F318419121F2D00C28CA9 /* CouchbaseLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CouchbaseLite.framework; sourceTree = "<group>"; };
 		E1B118611839E33D0083060E /* HelloCBL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloCBL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B118641839E33D0083060E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E1B118661839E33D0083060E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -71,7 +71,7 @@
 				E1B1189C183AD1A00083060E /* libsqlite3.dylib in Frameworks */,
 				E1B1189A183AD1910083060E /* SystemConfiguration.framework in Frameworks */,
 				E1B11898183AD1740083060E /* Security.framework in Frameworks */,
-				E1A8E27A1863E0E700B8E779 /* CouchbaseLite.framework in Frameworks */,
+				E11F318519121F2D00C28CA9 /* CouchbaseLite.framework in Frameworks */,
 				E1B11896183AD1690083060E /* CFNetwork.framework in Frameworks */,
 				E1B118671839E33D0083060E /* CoreGraphics.framework in Frameworks */,
 				E1B118691839E33D0083060E /* UIKit.framework in Frameworks */,
@@ -114,7 +114,7 @@
 		E1B118631839E33D0083060E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E1A8E2791863E0E700B8E779 /* CouchbaseLite.framework */,
+				E11F318419121F2D00C28CA9 /* CouchbaseLite.framework */,
 				E1B1189D183AD1AB0083060E /* libz.dylib */,
 				E1B1189B183AD1A00083060E /* libsqlite3.dylib */,
 				E1B11899183AD1910083060E /* SystemConfiguration.framework */,
@@ -213,7 +213,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = HC;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Couchbase;
 				TargetAttributes = {
 					E1B1187B1839E33D0083060E = {
@@ -311,7 +311,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -350,7 +349,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -387,6 +385,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/amy/dev/couchbase-lite-tutorial-ios/HelloCBL",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloCBL/HelloCBL-Prefix.pch";
@@ -405,6 +404,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/amy/dev/couchbase-lite-tutorial-ios/HelloCBL",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloCBL/HelloCBL-Prefix.pch";
@@ -418,7 +418,6 @@
 		E1B118911839E33D0083060E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HelloCBL.app/HelloCBL";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -441,7 +440,6 @@
 		E1B118921839E33D0083060E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HelloCBL.app/HelloCBL";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
