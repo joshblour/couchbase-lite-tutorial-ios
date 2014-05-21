@@ -1,10 +1,6 @@
 # Couchbase Lite iOS tutorial app
 
-This repo contains the complete iOS app used in the tutorial for Couchbase Lite iOS. The tutorial shows how to bring the Couchbase Lite framework into your app, set up dependencies, create a database, and do basic CRUD operations. To focus on using Couchbase Lite, the app is highly simplified and provides only console output in the simulator. (There's no UI output other than a plain white background screen).
-
-The code in the master branch is for an updated version of the tutorial, which is in progress. When that tutorial is published in late May 2014, I'll add a link to it here.
-
-[Prerelease version 0.1.0](https://github.com/couchbaselabs/couchbase-lite-tutorial-ios/releases) is compatible with the [Couchbase Lite iOS 1.0 beta 2 tutorial](http://docs.couchbase.com/couchbase-lite/cbl-ios/index.html#tutorial).
+This repo contains the complete iOS app used in the [tutorial for Couchbase Lite iOS](http://developer.couchbase.com/mobile/develop/training/build-first-ios-app/index.html). The tutorial shows how to bring the Couchbase Lite framework into your app, set up dependencies, create a database, and do basic CRUD operations. To focus on using Couchbase Lite, the app is highly simplified and provides only console output in the simulator. (There's no UI output other than a plain white background screen).
 
 ## Downloading and running the tutorial app
 
@@ -24,7 +20,7 @@ The code in the master branch is for an updated version of the tutorial, which i
 
 5. Add the Couchbase Lite framework to the app.
 
-	* Download the [latest release of Couchbase Lite for iOS](http://www.couchbase.com/communities/couchbase-lite) and move it to a permanent location.
+	* Download the [latest release of Couchbase Lite for iOS](http://www.couchbase.com/download#cb-mobile) and move it to a permanent location.
 
 	* From the **Couchbase Lite** folder, drag the **CouchbaseLite.framework** folder to the **Frameworks** group in the Xcode project navigator.
 
