@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D080C991B3341FC0066A944 /* CouchbaseLiteListener.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D080C981B3341FC0066A944 /* CouchbaseLiteListener.framework */; };
+		9D080C9B1B33420C0066A944 /* CouchbaseLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D080C9A1B33420C0066A944 /* CouchbaseLite.framework */; };
 		E11F318519121F2D00C28CA9 /* CouchbaseLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11F318419121F2D00C28CA9 /* CouchbaseLite.framework */; };
 		E1B118651839E33D0083060E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B118641839E33D0083060E /* Foundation.framework */; };
 		E1B118671839E33D0083060E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B118661839E33D0083060E /* CoreGraphics.framework */; };
@@ -15,7 +17,6 @@
 		E1B118711839E33D0083060E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B118701839E33D0083060E /* main.m */; };
 		E1B118751839E33D0083060E /* HCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B118741839E33D0083060E /* HCAppDelegate.m */; };
 		E1B118771839E33D0083060E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1B118761839E33D0083060E /* Images.xcassets */; };
-		E1B1187E1839E33D0083060E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B1187D1839E33D0083060E /* XCTest.framework */; };
 		E1B1187F1839E33D0083060E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B118641839E33D0083060E /* Foundation.framework */; };
 		E1B118801839E33D0083060E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B118681839E33D0083060E /* UIKit.framework */; };
 		E1B118881839E33D0083060E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1B118861839E33D0083060E /* InfoPlist.strings */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D080C981B3341FC0066A944 /* CouchbaseLiteListener.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CouchbaseLiteListener.framework; sourceTree = "<group>"; };
+		9D080C9A1B33420C0066A944 /* CouchbaseLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CouchbaseLite.framework; sourceTree = "<group>"; };
 		E11F318419121F2D00C28CA9 /* CouchbaseLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CouchbaseLite.framework; sourceTree = "<group>"; };
 		E1B118611839E33D0083060E /* HelloCBL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloCBL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B118641839E33D0083060E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -51,7 +54,6 @@
 		E1B118741839E33D0083060E /* HCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCAppDelegate.m; sourceTree = "<group>"; };
 		E1B118761839E33D0083060E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E1B1187C1839E33D0083060E /* HelloCBLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloCBLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1B1187D1839E33D0083060E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E1B118851839E33D0083060E /* HelloCBLTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HelloCBLTests-Info.plist"; sourceTree = "<group>"; };
 		E1B118871839E33D0083060E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E1B118891839E33D0083060E /* HelloCBLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloCBLTests.m; sourceTree = "<group>"; };
@@ -73,8 +75,10 @@
 				E1B11898183AD1740083060E /* Security.framework in Frameworks */,
 				E11F318519121F2D00C28CA9 /* CouchbaseLite.framework in Frameworks */,
 				E1B11896183AD1690083060E /* CFNetwork.framework in Frameworks */,
+				9D080C991B3341FC0066A944 /* CouchbaseLiteListener.framework in Frameworks */,
 				E1B118671839E33D0083060E /* CoreGraphics.framework in Frameworks */,
 				E1B118691839E33D0083060E /* UIKit.framework in Frameworks */,
+				9D080C9B1B33420C0066A944 /* CouchbaseLite.framework in Frameworks */,
 				E1B118651839E33D0083060E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,7 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1B1187E1839E33D0083060E /* XCTest.framework in Frameworks */,
 				E1B118801839E33D0083060E /* UIKit.framework in Frameworks */,
 				E1B1187F1839E33D0083060E /* Foundation.framework in Frameworks */,
 			);
@@ -114,7 +117,9 @@
 		E1B118631839E33D0083060E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D080C9A1B33420C0066A944 /* CouchbaseLite.framework */,
 				E11F318419121F2D00C28CA9 /* CouchbaseLite.framework */,
+				9D080C981B3341FC0066A944 /* CouchbaseLiteListener.framework */,
 				E1B1189D183AD1AB0083060E /* libz.dylib */,
 				E1B1189B183AD1A00083060E /* libsqlite3.dylib */,
 				E1B11899183AD1910083060E /* SystemConfiguration.framework */,
@@ -123,7 +128,6 @@
 				E1B118641839E33D0083060E /* Foundation.framework */,
 				E1B118661839E33D0083060E /* CoreGraphics.framework */,
 				E1B118681839E33D0083060E /* UIKit.framework */,
-				E1B1187D1839E33D0083060E /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -390,6 +394,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloCBL/HelloCBL-Prefix.pch";
 				INFOPLIST_FILE = "HelloCBL/HelloCBL-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -409,6 +417,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloCBL/HelloCBL-Prefix.pch";
 				INFOPLIST_FILE = "HelloCBL/HelloCBL-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
