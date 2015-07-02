@@ -48,7 +48,7 @@
     NSLog (@"This Hello Couchbase Lite run was a %@!", (result ? @"total success" : @"dismal failure"));
     
     
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTheDocument) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(updateTheDocument) userInfo:nil repeats:YES];
     return YES;
     
 }
