@@ -47,6 +47,8 @@
     BOOL result = [self sayHello];
     NSLog (@"This Hello Couchbase Lite run was a %@!", (result ? @"total success" : @"dismal failure"));
     
+    
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTheDocument) userInfo:nil repeats:YES];
     return YES;
     
 }
@@ -100,8 +102,8 @@ updating the document, and deleting the document.
     // update a document
     if (![self updateTheDocument]) return NO;
     
-    // delete a document
-    if (![self deleteTheDocument]) return NO;
+//    // delete a document
+//    if (![self deleteTheDocument]) return NO;
     
     return YES;
     
@@ -133,7 +135,7 @@ updating the document, and deleting the document.
     NSError *error;
     
     // create a name for the database and make sure the name is legal
-    NSString *dbname = @"my-new-database";
+    NSString *dbname = @"db";
     if (![CBLManager isValidDatabaseName: dbname]) {
         NSLog (@"Bad database name");
         return NO;
@@ -150,6 +152,15 @@ updating the document, and deleting the document.
     NSString *databaseLocation = [[[[NSBundle mainBundle] bundlePath] stringByDeletingLastPathComponent] stringByAppendingString: @"/Library/Application Support/CouchbaseLite"];
     NSLog(@"Database %@ created at %@", dbname, [NSString stringWithFormat:@"%@/%@%@", databaseLocation, dbname, @".cblite"]);
     
+    NSURL *serverURL = [NSURL URLWithString:@"http://127.0.0.1:5984/sync_gateway"];
+    CBLReplication *pullReplication = [_database createPullReplication:serverURL];
+    CBLReplication *pushReplication = [_database createPushReplication:serverURL];
+    
+    pullReplication.continuous = YES;
+    pushReplication.continuous = YES;
+    
+    [pullReplication start];
+    [pushReplication start];
     return YES;
 }
 
@@ -221,6 +232,7 @@ updating the document, and deleting the document.
     [docContent setObject:@"breakfast" forKey:@"meal"];
     [docContent setObject:@"Green eggs and ham" forKey:@"entree"];
     [docContent setObject:@"burnt" forKey:@"toast"];
+    [docContent setObject:[[NSDate date] description] forKey: @"timestamp"];
     
     // write the updated document to the database
     CBLSavedRevision *newRev = [retrievedDoc putProperties: docContent error: &error];
