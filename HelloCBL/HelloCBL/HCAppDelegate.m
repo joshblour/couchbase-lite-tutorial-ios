@@ -48,7 +48,7 @@
     NSLog (@"This Hello Couchbase Lite run was a %@!", (result ? @"total success" : @"dismal failure"));
     
     
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTheDocument) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(updateTheDocument) userInfo:nil repeats:YES];
     return YES;
     
 }
@@ -90,21 +90,21 @@ updating the document, and deleting the document.
 */
 - (BOOL) sayHello {
     
-    // create a database
-    if (![self createTheDatabase]) return NO;
-    
+    // delete existing database
+    if (![self deleteTheDatabase]) return NO;
+
+    // setup replications
+    if (![self setupReplications]) return NO;
+
     // create a new document & save it in the database
     if (![self createTheDocument]) return NO;
-
+        
     // retrieve a document from the database
     if (![self retrieveTheDocument]) return NO;
     
     // update a document
     if (![self updateTheDocument]) return NO;
-    
-//    // delete a document
-//    if (![self deleteTheDocument]) return NO;
-    
+
     return YES;
     
 }
@@ -129,32 +129,13 @@ updating the document, and deleting the document.
 }
 
 
-// creates the database
-- (BOOL) createTheDatabase {
+// creates the database (lazily) and starts replications
+- (BOOL) setupReplications {
     
-    NSError *error;
-    
-    // create a name for the database and make sure the name is legal
-    NSString *dbname = @"db";
-    if (![CBLManager isValidDatabaseName: dbname]) {
-        NSLog (@"Bad database name");
-        return NO;
-    }
-    
-    // create a new database
-    _database = [_manager databaseNamed: dbname error: &error];
-    if (!_database) {
-        NSLog (@"Cannot create database. Error message: %@", error.localizedDescription);
-        return NO;
-    }
-    
-    // log the database location
-    NSString *databaseLocation = [[[[NSBundle mainBundle] bundlePath] stringByDeletingLastPathComponent] stringByAppendingString: @"/Library/Application Support/CouchbaseLite"];
-    NSLog(@"Database %@ created at %@", dbname, [NSString stringWithFormat:@"%@/%@%@", databaseLocation, dbname, @".cblite"]);
     
     NSURL *serverURL = [NSURL URLWithString:@"http://127.0.0.1:5984/sync_gateway"];
-    CBLReplication *pullReplication = [_database createPullReplication:serverURL];
-    CBLReplication *pushReplication = [_database createPushReplication:serverURL];
+    CBLReplication *pullReplication = [self.database createPullReplication:serverURL];
+    CBLReplication *pushReplication = [self.database createPushReplication:serverURL];
     
     pullReplication.continuous = YES;
     pushReplication.continuous = YES;
@@ -184,7 +165,7 @@ updating the document, and deleting the document.
     NSLog(@"This is the data for the document: %@", myDictionary);
     
     // create an empty document
-    CBLDocument* doc = [_database createDocument];
+    CBLDocument* doc = [self.database documentWithID:@"foobar12345"];
     
     // save the ID of the new document
     _docID = doc.documentID;
@@ -207,7 +188,7 @@ updating the document, and deleting the document.
 - (BOOL) retrieveTheDocument {
     
     // retrieve the document from the database
-    CBLDocument *retrievedDoc = [_database documentWithID: _docID];
+    CBLDocument *retrievedDoc = [self.database documentWithID: _docID];
     
     // display the retrieved document
     NSLog(@"The retrieved document contains: %@", retrievedDoc.properties);
@@ -222,7 +203,7 @@ updating the document, and deleting the document.
     NSError *error;
 
     // retrieve the document from the database
-    CBLDocument *retrievedDoc = [_database documentWithID: _docID];
+    CBLDocument *retrievedDoc = [self.database documentWithID: _docID];
 
     // make a mutable copy of the properties from the document we just retrieved
     NSMutableDictionary *docContent = [retrievedDoc.properties mutableCopy];
@@ -254,7 +235,7 @@ updating the document, and deleting the document.
     NSError *error;
     
     // retrieve the document from the database and then delete it
-    if (![[_database documentWithID: _docID] deleteDocument: &error])
+    if (![[self.database documentWithID: _docID] deleteDocument: &error])
         NSLog (@"Cannot delete document. Error message: %@", error.localizedDescription);
 
     // verify the deletion by retrieving the document and checking whether it has been deleted
@@ -264,5 +245,48 @@ updating the document, and deleting the document.
     return YES;
     
 }
+
+// delete the database
+- (BOOL) deleteTheDatabase {
+    NSError *error;
+    [self.database deleteDatabase:&error];
+    
+    if (error) {
+        NSLog(@"Cannot delete database. Error message: %@", error.localizedDescription);
+        return NO;
+    }
+    NSLog(@"Deleted database");
+    self.database = nil;
+    
+    return YES;
+}
+
+// lazy instantiators
+
+-(CBLDatabase *)database {
+    if (!_database) {
+        NSError *error;
+        
+        // create a name for the database and make sure the name is legal
+        NSString *dbname = @"db";
+        
+        if (![_manager databaseExistsNamed:dbname]) {
+            // log the database location
+            NSString *databaseLocation = [[[[NSBundle mainBundle] bundlePath] stringByDeletingLastPathComponent] stringByAppendingString: @"/Library/Application Support/CouchbaseLite"];
+            NSLog(@"Will create db %@ at %@", dbname, [NSString stringWithFormat:@"%@/%@%@", databaseLocation, dbname, @".cblite"]);
+
+        }
+        
+        // create a new database
+        _database = [_manager databaseNamed: dbname error: &error];
+        if (!_database) {
+            NSLog (@"Cannot create database. Error message: %@", error.localizedDescription);
+        }
+
+        
+    }
+    return _database;
+}
+
 
 @end

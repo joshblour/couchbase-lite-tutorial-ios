@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9D080C991B3341FC0066A944 /* CouchbaseLiteListener.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D080C981B3341FC0066A944 /* CouchbaseLiteListener.framework */; };
 		9D080C9B1B33420C0066A944 /* CouchbaseLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D080C9A1B33420C0066A944 /* CouchbaseLite.framework */; };
+		9D2325F81BA1FE4D005FB47E /* sync_gateway.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D2325F71BA1FE4D005FB47E /* sync_gateway.json */; };
 		E11F318519121F2D00C28CA9 /* CouchbaseLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11F318419121F2D00C28CA9 /* CouchbaseLite.framework */; };
 		E1B118651839E33D0083060E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B118641839E33D0083060E /* Foundation.framework */; };
 		E1B118671839E33D0083060E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B118661839E33D0083060E /* CoreGraphics.framework */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		9D080C981B3341FC0066A944 /* CouchbaseLiteListener.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CouchbaseLiteListener.framework; sourceTree = "<group>"; };
 		9D080C9A1B33420C0066A944 /* CouchbaseLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CouchbaseLite.framework; sourceTree = "<group>"; };
+		9D2325F71BA1FE4D005FB47E /* sync_gateway.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sync_gateway.json; sourceTree = "<group>"; };
 		E11F318419121F2D00C28CA9 /* CouchbaseLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CouchbaseLite.framework; sourceTree = "<group>"; };
 		E1B118611839E33D0083060E /* HelloCBL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloCBL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B118641839E33D0083060E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -146,6 +148,7 @@
 		E1B1186B1839E33D0083060E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9D2325F71BA1FE4D005FB47E /* sync_gateway.json */,
 				E1B1186C1839E33D0083060E /* HelloCBL-Info.plist */,
 				E1B1186D1839E33D0083060E /* InfoPlist.strings */,
 				E1B118701839E33D0083060E /* main.m */,
@@ -249,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1B1186F1839E33D0083060E /* InfoPlist.strings in Resources */,
+				9D2325F81BA1FE4D005FB47E /* sync_gateway.json in Resources */,
 				E1B118771839E33D0083060E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

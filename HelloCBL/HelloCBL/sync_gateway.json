@@ -1,0 +1,16 @@
+{
+        "interface":":5984",
+        "adminInterface":":5985",
+        "log":["REST"],
+        "verbose":"true",
+        "databases":{
+                "sync_gateway" :{
+                        "server":"http://localhost:8091",
+                        "revs_limit" : 3,
+						"users": { "GUEST": { "disabled": false, "admin_channels": ["*"] } },
+                        "bucket": "sync_gateway"
+                }
+        }
+}
+
+
